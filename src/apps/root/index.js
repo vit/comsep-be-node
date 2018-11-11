@@ -2,7 +2,7 @@
     Root Actor
 */
 
-import { Machine } from '../../sm/sm';
+import { Machine } from '../../workflow/sm';
 
 const machine = new Machine();
 
@@ -40,13 +40,11 @@ machine.define_role({
 });
 
 
-
 export default (ctx) => {
-    console.log("define root");
-
 
 
     return {
+        app_name: "Root",
         machine: () => { return machine }
     };
 };
